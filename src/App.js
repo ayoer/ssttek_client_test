@@ -1,24 +1,18 @@
-import logo from './logo.svg';
+import 'antd/dist/antd.css';
 import './App.css';
+import {Route, Routes} from 'react-router-dom';
+import VendorList from 'pages/vendor/vendor-list';
+import AddUpdateVendor from 'pages/vendor/add-update-vendor';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path='/' element={<VendorList />}></Route>
+        <Route path='/addVendor' element={<AddUpdateVendor />}></Route>
+        <Route path='/editVendor/:id' element={<AddUpdateVendor />}></Route>
+      </Routes>
+    </>
   );
 }
 
